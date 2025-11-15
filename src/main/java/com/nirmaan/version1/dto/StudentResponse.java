@@ -9,18 +9,24 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//Response DTO
+/**
+ * Response DTO for Student Includes batch information for students assigned to
+ * batches
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentResponse {
+
+	// Student basic information
 	private Integer sid;
 	private String sname;
 	private String email;
 	private String phone;
 	private String rollNumber;
 
+	// Attendance information
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime intime;
 
@@ -31,6 +37,12 @@ public class StudentResponse {
 	private Double hoursPresent;
 	private boolean checkedIn;
 
+	// Metadata
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime createdAt;
+
+	// Batch information (null if student not assigned to any batch)
+	private Integer batchId;
+	private String batchName;
+	private String batchCode;
 }

@@ -49,4 +49,7 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 	// Find late check-ins (after 9 AM)
 	@Query("SELECT s FROM Student s WHERE HOUR(s.intime) > 9 AND DATE(s.intime) = CURRENT_DATE")
 	List<Student> findLateArrivals();
+	
+	// ADD THIS METHOD - Find students by batch ID
+	List<Student> findByBatch_BatchId(Integer batchId);
 }
