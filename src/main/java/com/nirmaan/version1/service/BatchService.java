@@ -17,6 +17,7 @@ import com.nirmaan.version1.entity.Student.AttendanceStatus;
 import com.nirmaan.version1.exception.DuplicateResourceException;
 import com.nirmaan.version1.exception.ResourceNotFoundException;
 import com.nirmaan.version1.repository.BatchRepo;
+import com.nirmaan.version1.repository.StudentRepo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,6 +28,9 @@ public class BatchService {
 
 	@Autowired
 	private BatchRepo batchRepo;
+
+	@Autowired
+	private StudentRepo studentRepo;
 
 	// Create new batch
 	public BatchResponse createBatch(BatchCreateRequest request) {
@@ -59,7 +63,7 @@ public class BatchService {
 	@Transactional(readOnly = true)
 	public List<BatchResponse> getAllBatches() {
 		log.info("Fetching all batches");
-		return batchRepo.findAll().stream().map(this::mapToResponse).collect(Collectors.toList());
+		return batchRepo.findAllWithStudents().stream().map(this::mapToResponse).collect(Collectors.toList());
 	}
 
 	// Update batch
@@ -74,10 +78,13 @@ public class BatchService {
 			throw new DuplicateResourceException("Batch code already exists");
 		}
 
+		// Get current student count from database (not from loaded students list)
+		Integer currentStudentCount = getStudentCountForBatch(batchId);
+
 		// Don't allow reducing maxCount below current student count
-		if (request.getMaxCount() < batch.getCurrentCount()) {
+		if (request.getMaxCount() < currentStudentCount) {
 			throw new IllegalArgumentException(
-					"Cannot reduce max count below current student count (" + batch.getCurrentCount() + ")");
+					"Cannot reduce max count below current student count (" + currentStudentCount + ")");
 		}
 
 		batch.setBatchName(request.getBatchName());
@@ -100,7 +107,8 @@ public class BatchService {
 		Batch batch = findBatchById(batchId);
 
 		// Check if batch has students
-		if (batch.getCurrentCount() > 0) {
+		Integer studentCount = getStudentCountForBatch(batchId);
+		if (studentCount > 0) {
 			throw new IllegalArgumentException("Cannot delete batch with enrolled students. Remove students first.");
 		}
 
@@ -164,18 +172,45 @@ public class BatchService {
 				.attendancePercentage(attendancePercentage).build();
 	}
 
-	// Helper method to find batch by ID
+	// Helper method to find batch by ID with students
 	public Batch findBatchById(Integer batchId) {
 		return batchRepo.findByIdWithStudents(batchId)
 				.orElseThrow(() -> new ResourceNotFoundException("Batch not found with ID: " + batchId));
 	}
 
-	// Map entity to response DTO
+	/**
+	 * Get the actual count of students in a batch directly from database
+	 * This bypasses lazy loading issues and gives the true count
+	 */
+	@Transactional(readOnly = true)
+	public Integer getStudentCountForBatch(Integer batchId) {
+		Integer count = batchRepo.getStudentCountInBatch(batchId);
+		return count != null ? count : 0;
+	}
+
+	/**
+	 * Map entity to response DTO
+	 * IMPORTANT: This method now queries the database for accurate student count
+	 */
 	private BatchResponse mapToResponse(Batch batch) {
-		return BatchResponse.builder().batchId(batch.getBatchId()).batchName(batch.getBatchName())
-				.batchCode(batch.getBatchCode()).maxCount(batch.getMaxCount()).currentCount(batch.getCurrentCount())
-				.availableSlots(batch.getAvailableSlots()).description(batch.getDescription())
-				.status(batch.getStatus().name()).isFull(batch.isFull()).startDate(batch.getStartDate())
-				.endDate(batch.getEndDate()).createdAt(batch.getCreatedAt()).build();
+		// Get the actual student count from database to ensure accuracy
+		Integer actualStudentCount = getStudentCountForBatch(batch.getBatchId());
+		Integer availableSlots = batch.getMaxCount() - actualStudentCount;
+		boolean isFull = actualStudentCount >= batch.getMaxCount();
+
+		return BatchResponse.builder()
+				.batchId(batch.getBatchId())
+				.batchName(batch.getBatchName())
+				.batchCode(batch.getBatchCode())
+				.maxCount(batch.getMaxCount())
+				.currentCount(actualStudentCount)  // Use database count instead of loaded list
+				.availableSlots(availableSlots)
+				.description(batch.getDescription())
+				.status(batch.getStatus().name())
+				.isFull(isFull)
+				.startDate(batch.getStartDate())
+				.endDate(batch.getEndDate())
+				.createdAt(batch.getCreatedAt())
+				.build();
 	}
 }

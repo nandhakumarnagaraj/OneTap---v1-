@@ -48,4 +48,8 @@ public interface BatchRepo extends JpaRepository<Batch, Integer> {
 	// NEW: Find all batches with students (prevents N+1)
 	@Query("SELECT DISTINCT b FROM Batch b LEFT JOIN FETCH b.students")
 	List<Batch> findAllWithStudents();
+
+	// NEW: Get direct count of students in a batch from database
+	@Query("SELECT COUNT(s) FROM Student s WHERE s.batch.batchId = :batchId")
+	Integer getStudentCountInBatch(@Param("batchId") Integer batchId);
 }

@@ -20,6 +20,7 @@ import com.nirmaan.version1.exception.DuplicateResourceException;
 import com.nirmaan.version1.exception.InvalidOperationException;
 import com.nirmaan.version1.exception.ResourceNotFoundException;
 import com.nirmaan.version1.repository.StudentRepo;
+import com.nirmaan.version1.repository.BatchRepo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,7 +34,9 @@ public class StudentService {
 
     @Autowired
     private BatchService batchService;
-    
+
+    @Autowired
+    private BatchRepo batchRepo;
 
     /**
      * Create new student with optional batch assignment
@@ -61,8 +64,11 @@ public class StudentService {
         if (request.getBatchId() != null) {
             Batch batch = batchService.findBatchById(request.getBatchId());
 
+            // Get actual student count directly from database
+            Integer currentStudentCount = batchService.getStudentCountForBatch(request.getBatchId());
+
             // Check if batch is full
-            if (batch.isFull()) {
+            if (currentStudentCount >= batch.getMaxCount()) {
                 throw new InvalidOperationException(
                     "Batch " + batch.getBatchCode() + " is full. Maximum capacity: " + batch.getMaxCount());
             }
@@ -208,7 +214,10 @@ public class StudentService {
             if (student.getBatch() == null || 
                 !student.getBatch().getBatchId().equals(request.getBatchId())) {
                 
-                if (newBatch.isFull()) {
+                // Get actual count for new batch
+                Integer newBatchStudentCount = batchService.getStudentCountForBatch(request.getBatchId());
+                
+                if (newBatchStudentCount >= newBatch.getMaxCount()) {
                     throw new InvalidOperationException(
                         "Batch " + newBatch.getBatchCode() + " is full");
                 }
