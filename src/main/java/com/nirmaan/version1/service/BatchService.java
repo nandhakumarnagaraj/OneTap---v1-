@@ -63,7 +63,9 @@ public class BatchService {
 	@Transactional(readOnly = true)
 	public List<BatchResponse> getAllBatches() {
 		log.info("Fetching all batches");
-		return batchRepo.findAllWithStudents().stream().map(this::mapToResponse).collect(Collectors.toList());
+		return batchRepo.findAll().stream()
+				.map(this::mapToResponse)
+				.collect(Collectors.toList());
 	}
 
 	// Update batch
@@ -131,21 +133,26 @@ public class BatchService {
 	@Transactional(readOnly = true)
 	public List<BatchResponse> getActiveBatches() {
 		log.info("Fetching active batches");
-		return batchRepo.findActiveBatches().stream().map(this::mapToResponse).collect(Collectors.toList());
+		return batchRepo.findActiveBatches().stream()
+				.map(this::mapToResponse)
+				.collect(Collectors.toList());
 	}
 
 	// Get batches with available slots
 	@Transactional(readOnly = true)
 	public List<BatchResponse> getBatchesWithAvailableSlots() {
 		log.info("Fetching batches with available slots");
-		return batchRepo.findBatchesWithAvailableSlots().stream().map(this::mapToResponse).collect(Collectors.toList());
+		return batchRepo.findBatchesWithAvailableSlots().stream()
+				.map(this::mapToResponse)
+				.collect(Collectors.toList());
 	}
 
 	// Search batches by name
 	@Transactional(readOnly = true)
 	public List<BatchResponse> searchByName(String name) {
 		log.info("Searching batches by name: {}", name);
-		return batchRepo.findByBatchNameContainingIgnoreCase(name).stream().map(this::mapToResponse)
+		return batchRepo.findByBatchNameContainingIgnoreCase(name).stream()
+				.map(this::mapToResponse)
 				.collect(Collectors.toList());
 	}
 
@@ -167,8 +174,10 @@ public class BatchService {
 		double attendancePercentage = students.isEmpty() ? 0.0 : (presentToday * 100.0 / students.size());
 
 		return BatchSummary.builder().batchId(batch.getBatchId()).batchName(batch.getBatchName())
-				.batchCode(batch.getBatchCode()).maxCount(batch.getMaxCount()).currentCount(batch.getCurrentCount())
-				.availableSlots(batch.getAvailableSlots()).totalPresentToday(presentToday).totalAbsentToday(absentToday)
+				.batchCode(batch.getBatchCode()).maxCount(batch.getMaxCount())
+				.currentCount(students.size())  // Use actual loaded size
+				.availableSlots(batch.getMaxCount() - students.size())
+				.totalPresentToday(presentToday).totalAbsentToday(absentToday)
 				.attendancePercentage(attendancePercentage).build();
 	}
 
@@ -190,10 +199,10 @@ public class BatchService {
 
 	/**
 	 * Map entity to response DTO
-	 * IMPORTANT: This method now queries the database for accurate student count
+	 * IMPORTANT: Always query the database for accurate student count
 	 */
 	private BatchResponse mapToResponse(Batch batch) {
-		// Get the actual student count from database to ensure accuracy
+		// Always get the actual student count from database to ensure accuracy
 		Integer actualStudentCount = getStudentCountForBatch(batch.getBatchId());
 		Integer availableSlots = batch.getMaxCount() - actualStudentCount;
 		boolean isFull = actualStudentCount >= batch.getMaxCount();
@@ -203,7 +212,7 @@ public class BatchService {
 				.batchName(batch.getBatchName())
 				.batchCode(batch.getBatchCode())
 				.maxCount(batch.getMaxCount())
-				.currentCount(actualStudentCount)  // Use database count instead of loaded list
+				.currentCount(actualStudentCount)  // Always use database count
 				.availableSlots(availableSlots)
 				.description(batch.getDescription())
 				.status(batch.getStatus().name())
