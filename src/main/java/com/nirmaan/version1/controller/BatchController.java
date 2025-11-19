@@ -34,7 +34,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/v1/batches")
 @Validated
 @Slf4j
-@CrossOrigin(origins = "*")
 public class BatchController {
 
     @Autowired

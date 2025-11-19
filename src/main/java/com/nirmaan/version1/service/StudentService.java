@@ -102,15 +102,7 @@ public class StudentService {
     @Transactional(readOnly = true)
     public List<StudentResponse> getAllStudents() {
         log.info("Fetching all students");
-        List<Student> students = studentRepo.findAll();
-        
-        // Force batch initialization for all students
-        students.forEach(s -> {
-            if (s.getBatch() != null) {
-                s.getBatch().getBatchName();
-            }
-        });
-        
+        List<Student> students = studentRepo.findAllWithBatch();
         return students.stream()
             .map(this::mapToResponse)
             .collect(Collectors.toList());
@@ -267,14 +259,6 @@ public class StudentService {
     public List<StudentResponse> searchByName(String name) {
         log.info("Searching students by name: {}", name);
         List<Student> students = studentRepo.findBySnameContainingIgnoreCase(name);
-        
-        // Force batch initialization
-        students.forEach(s -> {
-            if (s.getBatch() != null) {
-                s.getBatch().getBatchName();
-            }
-        });
-        
         return students.stream()
             .map(this::mapToResponse)
             .collect(Collectors.toList());
@@ -288,14 +272,6 @@ public class StudentService {
     public List<StudentResponse> getCurrentlyCheckedIn() {
         log.info("Fetching currently checked-in students");
         List<Student> students = studentRepo.findCurrentlyCheckedIn();
-        
-        // Force batch initialization
-        students.forEach(s -> {
-            if (s.getBatch() != null) {
-                s.getBatch().getBatchName();
-            }
-        });
-        
         return students.stream()
             .map(this::mapToResponse)
             .collect(Collectors.toList());
@@ -309,14 +285,6 @@ public class StudentService {
     public List<StudentResponse> getPresentToday() {
         log.info("Fetching students present today");
         List<Student> students = studentRepo.findPresentToday();
-        
-        // Force batch initialization
-        students.forEach(s -> {
-            if (s.getBatch() != null) {
-                s.getBatch().getBatchName();
-            }
-        });
-        
         return students.stream()
             .map(this::mapToResponse)
             .collect(Collectors.toList());
@@ -352,11 +320,21 @@ public class StudentService {
 
         Student student = findStudentById(sid);
 
-        long presentDays = studentRepo.countAttendanceByStatus(sid, AttendanceStatus.PRESENT) +
-                          studentRepo.countAttendanceByStatus(sid, AttendanceStatus.LATE);
-        long absentDays = studentRepo.countAttendanceByStatus(sid, AttendanceStatus.ABSENT);
-        long totalDays = presentDays + absentDays;
+        List<Object[]> summary = studentRepo.getAttendanceSummary(sid);
+        long presentDays = 0;
+        long absentDays = 0;
 
+        for (Object[] result : summary) {
+            AttendanceStatus status = (AttendanceStatus) result[0];
+            long count = (long) result[1];
+            if (status == AttendanceStatus.PRESENT || status == AttendanceStatus.LATE) {
+                presentDays += count;
+            } else if (status == AttendanceStatus.ABSENT) {
+                absentDays += count;
+            }
+        }
+
+        long totalDays = presentDays + absentDays;
         double attendancePercentage = totalDays > 0 ? (presentDays * 100.0 / totalDays) : 0.0;
 
         return AttendanceSummary.builder()

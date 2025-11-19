@@ -32,7 +32,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/v1/students")
 @Validated
 @Slf4j
-@CrossOrigin(origins = "*")
 public class StudentController {
 
 	@Autowired

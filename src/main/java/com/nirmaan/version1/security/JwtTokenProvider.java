@@ -14,7 +14,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-import io.jsonwebtoken.JwtParser;
 
 @Component
 @Slf4j
@@ -101,8 +100,7 @@ public class JwtTokenProvider {
 	 */
 	private Claims getAllClaimsFromToken(String token) {
 		try {
-			JwtParser parser = Jwts.parserBuilder().setSigningKey(getSigningKey()).build();
-			return parser.parseClaimsJws(token).getBody();
+			return Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token).getPayload();
 		} catch (Exception e) {
 			log.error("Error parsing JWT token: {}", e.getMessage());
 			throw new RuntimeException("Invalid JWT token", e);
@@ -130,8 +128,7 @@ public class JwtTokenProvider {
 	 */
 	public Boolean validateToken(String token) {
 		try {
-			JwtParser parser = Jwts.parserBuilder().setSigningKey(getSigningKey()).build();
-			parser.parseClaimsJws(token);
+			Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token);
 			return !isTokenExpired(token);
 		} catch (Exception e) {
 			log.error("JWT validation failed: {}", e.getMessage());

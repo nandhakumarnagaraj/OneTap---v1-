@@ -2,6 +2,7 @@ package com.nirmaan.version1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -106,7 +107,7 @@ public class AuthService {
 			return LoginResponse.builder().token(token).userId(user.getUserId()).username(user.getUsername())
 					.email(user.getEmail()).role(user.getRole().name()).build();
 
-		} catch (Exception e) {
+		} catch (BadCredentialsException e) {
 			log.error("Authentication failed for user: {}", request.getUsername());
 			throw new InvalidOperationException("Invalid username or password");
 		}

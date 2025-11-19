@@ -166,7 +166,7 @@ public class BatchService {
 
 	// Helper method to find batch by ID
 	public Batch findBatchById(Integer batchId) {
-		return batchRepo.findById(batchId)
+		return batchRepo.findByIdWithStudents(batchId)
 				.orElseThrow(() -> new ResourceNotFoundException("Batch not found with ID: " + batchId));
 	}
 

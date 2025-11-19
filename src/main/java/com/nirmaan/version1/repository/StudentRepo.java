@@ -39,18 +39,18 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 	long countByStatus(AttendanceStatus status);
 
 	// Find students present today with batch (FIXED - Added JOIN FETCH)
-	@Query("SELECT s FROM Student s LEFT JOIN FETCH s.batch WHERE DATE(s.intime) = CURRENT_DATE")
+	@Query(value = "SELECT * FROM students s WHERE DATE(s.intime) = CURRENT_DATE", nativeQuery = true)
 	List<Student> findPresentToday();
 
 	// Check if roll number exists (no change needed)
 	boolean existsByRollNumber(String rollNumber);
 
 	// Get attendance summary for a student (no change needed)
-	@Query("SELECT COUNT(s) FROM Student s WHERE s.sid = :sid AND s.status = :status")
-	long countAttendanceByStatus(@Param("sid") Integer sid, @Param("status") AttendanceStatus status);
+	@Query("SELECT s.status, COUNT(s) FROM Student s WHERE s.sid = :sid GROUP BY s.status")
+	List<Object[]> getAttendanceSummary(@Param("sid") Integer sid);
 
 	// Find late check-ins with batch (FIXED - Added JOIN FETCH)
-	@Query("SELECT s FROM Student s LEFT JOIN FETCH s.batch WHERE HOUR(s.intime) > 9 AND DATE(s.intime) = CURRENT_DATE")
+	@Query(value = "SELECT * FROM students s WHERE HOUR(s.intime) > 9 AND DATE(s.intime) = CURRENT_DATE", nativeQuery = true)
 	List<Student> findLateArrivals();
 
 	// Find students by batch ID with batch (FIXED - Added JOIN FETCH)

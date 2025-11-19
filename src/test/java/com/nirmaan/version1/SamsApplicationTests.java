@@ -1,4 +1,4 @@
-package com.nirmaan.vaersion1;
+package com.nirmaan.version1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
