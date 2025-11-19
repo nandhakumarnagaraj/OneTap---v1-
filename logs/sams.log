@@ -1,0 +1,3631 @@
+2025-11-18T09:37:21.674+05:30  INFO 8268 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Starting SamsApplication using Java 21.0.6 with PID 8268 (C:\Users\DELL\OneDrive\Desktop\Apps\spring-tool-suite-4-4.29.1.RELEASE-e4.35.0-win32.win32.x86_64\SAMS\target\classes started by Nirmaan in C:\Users\DELL\OneDrive\Desktop\Apps\spring-tool-suite-4-4.29.1.RELEASE-e4.35.0-win32.win32.x86_64\SAMS)
+2025-11-18T09:37:21.696+05:30 DEBUG 8268 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Running with Spring Boot v3.5.7, Spring v6.2.12
+2025-11-18T09:37:21.700+05:30  INFO 8268 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-11-18T09:37:21.988+05:30  INFO 8268 --- [SAMS] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-18T09:37:21.988+05:30  INFO 8268 --- [SAMS] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-18T09:37:26.976+05:30  INFO 8268 --- [SAMS] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-18T09:37:27.434+05:30  INFO 8268 --- [SAMS] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 399 ms. Found 2 JPA repository interfaces.
+2025-11-18T09:37:30.061+05:30  INFO 8268 --- [SAMS] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-18T09:37:30.132+05:30  INFO 8268 --- [SAMS] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-18T09:37:30.132+05:30  INFO 8268 --- [SAMS] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-18T09:37:30.331+05:30  INFO 8268 --- [SAMS] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/sams]   : Initializing Spring embedded WebApplicationContext
+2025-11-18T09:37:30.331+05:30  INFO 8268 --- [SAMS] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8343 ms
+2025-11-18T09:37:31.138+05:30  INFO 8268 --- [SAMS] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-18T09:37:31.347+05:30  INFO 8268 --- [SAMS] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-18T09:37:31.574+05:30  INFO 8268 --- [SAMS] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-18T09:37:33.292+05:30  INFO 8268 --- [SAMS] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-18T09:37:33.480+05:30  INFO 8268 --- [SAMS] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-18T09:37:34.770+05:30  INFO 8268 --- [SAMS] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f8bc91e
+2025-11-18T09:37:34.774+05:30  INFO 8268 --- [SAMS] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-18T09:37:35.178+05:30  WARN 8268 --- [SAMS] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-18T09:37:35.178+05:30  WARN 8268 --- [SAMS] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-18T09:37:35.261+05:30  INFO 8268 --- [SAMS] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-18T09:37:39.871+05:30  INFO 8268 --- [SAMS] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-18T09:37:40.328+05:30 DEBUG 8268 --- [SAMS] [restartedMain] org.hibernate.SQL                        : 
+    alter table batches 
+       modify column status enum ('ACTIVE','COMPLETED','INACTIVE','UPCOMING')
+2025-11-18T09:37:40.613+05:30 DEBUG 8268 --- [SAMS] [restartedMain] org.hibernate.SQL                        : 
+    alter table students 
+       modify column status enum ('ABSENT','EXCUSED','LATE','PRESENT')
+2025-11-18T09:37:40.751+05:30  INFO 8268 --- [SAMS] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-18T09:37:41.793+05:30  INFO 8268 --- [SAMS] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-18T09:37:46.552+05:30  WARN 8268 --- [SAMS] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-18T09:37:49.016+05:30  INFO 8268 --- [SAMS] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-18T09:37:49.244+05:30  INFO 8268 --- [SAMS] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/sams'
+2025-11-18T09:37:49.276+05:30  INFO 8268 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Started SamsApplication in 30.244 seconds (process running for 32.769)
+2025-11-18T09:37:57.209+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/sams]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-18T09:37:57.210+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-18T09:37:57.210+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-18T09:37:57.623+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:37:57.623+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:37:57.694+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:37:57.703+05:30  INFO 8268 --- [SAMS] [http-nio-8080-exec-1] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:37:57.972+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:37:57.972+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:37:58.207+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:37:58.225+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:37:58.255+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:37:58.270+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:37:58.281+05:30 DEBUG 8268 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:38:08.462+05:30  INFO 8268 --- [SAMS] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-11-18T09:38:08.466+05:30  INFO 8268 --- [SAMS] [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-18T09:38:08.495+05:30  INFO 8268 --- [SAMS] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-18T09:38:08.500+05:30  INFO 8268 --- [SAMS] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-18T09:38:08.505+05:30  INFO 8268 --- [SAMS] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-18T09:38:08.510+05:30  INFO 8268 --- [SAMS] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-18T09:38:27.139+05:30  INFO 5784 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Starting SamsApplication using Java 21.0.6 with PID 5784 (C:\Users\DELL\OneDrive\Desktop\Apps\spring-tool-suite-4-4.29.1.RELEASE-e4.35.0-win32.win32.x86_64\SAMS\target\classes started by Nirmaan in C:\Users\DELL\OneDrive\Desktop\Apps\spring-tool-suite-4-4.29.1.RELEASE-e4.35.0-win32.win32.x86_64\SAMS)
+2025-11-18T09:38:27.146+05:30 DEBUG 5784 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Running with Spring Boot v3.5.7, Spring v6.2.12
+2025-11-18T09:38:27.151+05:30  INFO 5784 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-11-18T09:38:27.349+05:30  INFO 5784 --- [SAMS] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-18T09:38:27.349+05:30  INFO 5784 --- [SAMS] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-18T09:38:30.367+05:30  INFO 5784 --- [SAMS] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-18T09:38:30.641+05:30  INFO 5784 --- [SAMS] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 228 ms. Found 2 JPA repository interfaces.
+2025-11-18T09:38:31.783+05:30  INFO 5784 --- [SAMS] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-18T09:38:31.800+05:30  INFO 5784 --- [SAMS] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-18T09:38:31.801+05:30  INFO 5784 --- [SAMS] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-18T09:38:31.873+05:30  INFO 5784 --- [SAMS] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/sams]   : Initializing Spring embedded WebApplicationContext
+2025-11-18T09:38:31.873+05:30  INFO 5784 --- [SAMS] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4521 ms
+2025-11-18T09:38:32.103+05:30  INFO 5784 --- [SAMS] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-18T09:38:32.162+05:30  INFO 5784 --- [SAMS] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-18T09:38:32.211+05:30  INFO 5784 --- [SAMS] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-18T09:38:32.575+05:30  INFO 5784 --- [SAMS] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-18T09:38:32.614+05:30  INFO 5784 --- [SAMS] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-18T09:38:32.857+05:30  INFO 5784 --- [SAMS] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6da71a2e
+2025-11-18T09:38:32.860+05:30  INFO 5784 --- [SAMS] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-18T09:38:32.935+05:30  WARN 5784 --- [SAMS] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-18T09:38:32.936+05:30  WARN 5784 --- [SAMS] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-18T09:38:32.962+05:30  INFO 5784 --- [SAMS] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-18T09:38:34.206+05:30  INFO 5784 --- [SAMS] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-18T09:38:34.325+05:30 DEBUG 5784 --- [SAMS] [restartedMain] org.hibernate.SQL                        : 
+    alter table batches 
+       modify column status enum ('ACTIVE','COMPLETED','INACTIVE','UPCOMING')
+2025-11-18T09:38:34.405+05:30 DEBUG 5784 --- [SAMS] [restartedMain] org.hibernate.SQL                        : 
+    alter table students 
+       modify column status enum ('ABSENT','EXCUSED','LATE','PRESENT')
+2025-11-18T09:38:34.524+05:30  INFO 5784 --- [SAMS] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-18T09:38:34.929+05:30  INFO 5784 --- [SAMS] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-18T09:38:36.092+05:30  WARN 5784 --- [SAMS] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-18T09:38:36.585+05:30  INFO 5784 --- [SAMS] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-18T09:38:36.645+05:30  INFO 5784 --- [SAMS] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/sams'
+2025-11-18T09:38:36.656+05:30  INFO 5784 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Started SamsApplication in 11.398 seconds (process running for 13.748)
+2025-11-18T09:38:41.267+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/sams]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-18T09:38:41.268+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-18T09:38:41.274+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-11-18T09:38:41.574+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:38:41.574+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:38:41.614+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:38:41.614+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:38:41.850+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:38:41.850+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:38:42.039+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:38:42.047+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:38:42.065+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:38:42.077+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:38:42.085+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:39:39.325+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:39:39.325+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:39:39.327+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:39:39.327+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:39:39.338+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:39:39.342+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:39:39.354+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:39:39.361+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:39:39.370+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:39:39.370+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:39:39.379+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:39:46.946+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:39:46.946+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-9] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:39:46.950+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-9] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:39:46.950+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:39:46.956+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:39:46.956+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:39:46.967+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:39:46.975+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:39:46.981+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:39:46.983+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:39:46.986+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:43:27.092+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-3] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:43:27.092+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:43:27.100+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:43:27.100+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-3] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:43:27.110+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:43:27.110+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:43:27.120+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:43:27.128+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:43:27.135+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:43:27.135+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:43:27.145+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:43:29.706+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:43:29.706+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:43:29.720+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:43:29.720+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:43:29.727+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:43:29.727+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:43:29.737+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:43:29.741+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:43:29.753+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:43:29.753+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:43:29.760+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:45:26.090+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.v.controller.StudentController       : REST request to create student: 413021104009
+2025-11-18T09:45:26.090+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.service.StudentService      : Creating new student with roll number: 413021104009
+2025-11-18T09:45:26.191+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.sid 
+    from
+        students s1_0 
+    where
+        s1_0.roll_number=? 
+    limit
+        ?
+2025-11-18T09:45:26.241+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:45:26.260+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:45:26.263+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.service.StudentService      : Student assigned to batch: BATCH001
+2025-11-18T09:45:26.407+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        students
+        (batch_id, created_at, email, intime, outtime, phone, roll_number, sname, status, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-18T09:45:26.523+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.service.StudentService      : Student created successfully with ID: 8
+2025-11-18T09:45:26.590+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:45:26.590+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:45:26.590+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:45:26.590+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:45:26.609+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:45:26.609+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:45:26.614+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:45:26.614+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:45:26.626+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:45:26.628+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:45:26.628+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:49:13.239+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.v.controller.StudentController       : REST request to create student: st2007
+2025-11-18T09:49:13.239+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.service.StudentService      : Creating new student with roll number: st2007
+2025-11-18T09:49:13.251+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.sid 
+    from
+        students s1_0 
+    where
+        s1_0.roll_number=? 
+    limit
+        ?
+2025-11-18T09:49:13.256+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:49:13.256+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:49:13.270+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.service.StudentService      : Student assigned to batch: BATCH001
+2025-11-18T09:49:13.273+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        students
+        (batch_id, created_at, email, intime, outtime, phone, roll_number, sname, status, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-18T09:49:13.290+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.service.StudentService      : Student created successfully with ID: 9
+2025-11-18T09:49:13.329+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T09:49:13.329+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T09:49:13.329+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T09:49:13.329+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T09:49:13.337+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T09:49:13.337+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T09:49:13.340+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:49:13.353+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:49:13.359+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T09:49:13.359+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T09:49:13.370+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:36.219+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:04:36.220+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:04:36.226+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:04:36.229+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:04:36.230+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:04:36.233+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:04:36.252+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:36.272+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:04:36.280+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:04:36.295+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:36.306+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:36.861+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:04:36.861+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:04:36.864+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:04:36.864+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:04:36.867+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:04:36.867+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:04:36.872+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:36.874+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:04:36.880+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:36.883+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:04:36.887+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:04:39.980+05:30  WARN 5784 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m6s689ms383µs400ns).
+2025-11-18T10:08:37.627+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:08:37.627+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:08:37.633+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:08:37.633+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:08:37.636+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:08:37.636+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:08:37.643+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:08:37.648+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:08:37.670+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:08:37.685+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:08:37.685+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:41.945+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:21:41.945+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:21:41.952+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:21:41.952+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:21:41.963+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:21:41.963+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:21:41.966+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:21:41.966+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:41.966+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:21:41.977+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:41.979+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:41.997+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:21:41.997+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:21:41.997+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:21:41.997+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:21:42.001+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:21:42.001+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:21:42.001+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:42.001+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:21:42.009+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:21:42.013+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:42.016+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:21:43.915+05:30  WARN 5784 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m33s662ms780µs300ns).
+2025-11-18T10:30:40.104+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:30:40.104+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:30:40.107+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:30:40.107+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:30:40.115+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:30:40.115+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:30:40.127+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:30:40.127+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:30:40.135+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:30:40.138+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:30:40.148+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:30:40.169+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-9] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:30:40.177+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-9] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:30:40.177+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-7] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:30:40.184+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-7] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:30:40.192+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:30:40.192+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:30:40.198+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:30:40.198+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:30:40.202+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:30:40.202+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:30:40.209+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:13.740+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:55:13.740+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:55:13.748+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-1] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:55:13.748+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:55:13.774+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:55:13.774+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:55:13.779+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:13.779+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:55:13.788+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:55:13.794+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:13.794+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:13.812+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-3] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T10:55:13.812+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T10:55:13.820+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T10:55:13.820+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-3] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T10:55:13.824+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T10:55:13.824+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T10:55:13.828+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:13.828+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:55:13.832+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T10:55:13.832+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:13.836+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T10:55:14.623+05:30  WARN 5784 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m46s789ms397µs600ns).
+2025-11-18T13:09:08.865+05:30  WARN 5784 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h10m54s186ms552µs800ns).
+2025-11-18T13:09:09.556+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-7] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T13:09:09.561+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T13:09:09.566+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-7] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T13:09:09.567+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T13:09:09.586+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T13:09:09.586+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T13:09:09.594+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:09:09.599+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:09:09.603+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:09:09.612+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:09:09.622+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:09:09.641+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T13:09:09.641+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T13:09:09.644+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-6] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T13:09:09.647+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T13:09:09.652+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T13:09:09.652+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T13:09:09.657+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:09:09.665+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:09:09.667+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:09:09.672+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:09:09.672+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:24:57.495+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T13:24:57.503+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-4] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T13:24:57.504+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T13:24:57.513+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-8] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T13:24:57.517+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T13:24:57.517+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T13:24:57.541+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:24:57.541+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:24:57.547+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:24:57.568+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:24:57.582+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:24:57.591+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T13:24:57.601+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T13:24:57.613+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T13:24:57.625+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:24:57.634+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-9] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T13:24:57.634+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T13:24:57.644+05:30  INFO 5784 --- [SAMS] [http-nio-8080-exec-9] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T13:24:57.648+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T13:24:57.654+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:24:57.665+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:24:57.667+05:30 DEBUG 5784 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T13:25:13.804+05:30  INFO 5784 --- [SAMS] [RMI TCP Connection(74)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-11-18T13:25:13.851+05:30  INFO 5784 --- [SAMS] [RMI TCP Connection(74)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-18T13:25:13.885+05:30  INFO 5784 --- [SAMS] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-18T13:25:13.929+05:30  INFO 5784 --- [SAMS] [RMI TCP Connection(74)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-18T13:25:13.963+05:30  INFO 5784 --- [SAMS] [RMI TCP Connection(74)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-18T13:25:13.976+05:30  INFO 5784 --- [SAMS] [RMI TCP Connection(74)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-18T14:42:05.071+05:30  INFO 17052 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Starting SamsApplication using Java 21.0.6 with PID 17052 (C:\Users\DELL\OneDrive\Desktop\Apps\spring-tool-suite-4-4.29.1.RELEASE-e4.35.0-win32.win32.x86_64\SAMS\target\classes started by Nirmaan in C:\Users\DELL\OneDrive\Desktop\Apps\spring-tool-suite-4-4.29.1.RELEASE-e4.35.0-win32.win32.x86_64\SAMS)
+2025-11-18T14:42:05.074+05:30 DEBUG 17052 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Running with Spring Boot v3.5.7, Spring v6.2.12
+2025-11-18T14:42:05.076+05:30  INFO 17052 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-11-18T14:42:05.145+05:30  INFO 17052 --- [SAMS] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-18T14:42:05.145+05:30  INFO 17052 --- [SAMS] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-18T14:42:07.145+05:30  INFO 17052 --- [SAMS] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-18T14:42:07.258+05:30  INFO 17052 --- [SAMS] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
+2025-11-18T14:42:08.315+05:30  INFO 17052 --- [SAMS] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-18T14:42:08.364+05:30  INFO 17052 --- [SAMS] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-18T14:42:08.367+05:30  INFO 17052 --- [SAMS] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-18T14:42:08.446+05:30  INFO 17052 --- [SAMS] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/sams]   : Initializing Spring embedded WebApplicationContext
+2025-11-18T14:42:08.446+05:30  INFO 17052 --- [SAMS] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3301 ms
+2025-11-18T14:42:08.822+05:30  INFO 17052 --- [SAMS] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-18T14:42:08.989+05:30  INFO 17052 --- [SAMS] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-18T14:42:09.065+05:30  INFO 17052 --- [SAMS] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-18T14:42:09.549+05:30  INFO 17052 --- [SAMS] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-18T14:42:09.597+05:30  INFO 17052 --- [SAMS] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-18T14:42:10.093+05:30  INFO 17052 --- [SAMS] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e32302d
+2025-11-18T14:42:10.096+05:30  INFO 17052 --- [SAMS] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-18T14:42:10.297+05:30  WARN 17052 --- [SAMS] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-18T14:42:10.300+05:30  WARN 17052 --- [SAMS] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-18T14:42:10.326+05:30  INFO 17052 --- [SAMS] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-18T14:42:12.101+05:30  INFO 17052 --- [SAMS] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-18T14:42:12.390+05:30 DEBUG 17052 --- [SAMS] [restartedMain] org.hibernate.SQL                        : 
+    alter table batches 
+       modify column status enum ('ACTIVE','COMPLETED','INACTIVE','UPCOMING')
+2025-11-18T14:42:12.605+05:30 DEBUG 17052 --- [SAMS] [restartedMain] org.hibernate.SQL                        : 
+    alter table students 
+       modify column status enum ('ABSENT','EXCUSED','LATE','PRESENT')
+2025-11-18T14:42:12.745+05:30  INFO 17052 --- [SAMS] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-18T14:42:14.013+05:30  INFO 17052 --- [SAMS] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-18T14:42:17.754+05:30  WARN 17052 --- [SAMS] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-18T14:42:19.381+05:30  INFO 17052 --- [SAMS] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-18T14:42:19.598+05:30  INFO 17052 --- [SAMS] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/sams'
+2025-11-18T14:42:19.621+05:30  INFO 17052 --- [SAMS] [restartedMain] com.nirmaan.version1.SamsApplication     : Started SamsApplication in 15.755 seconds (process running for 17.934)
+2025-11-18T15:03:34.959+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/sams]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-18T15:03:34.982+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-18T15:03:35.091+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 108 ms
+2025-11-18T15:03:35.729+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T15:03:35.729+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T15:03:35.799+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T15:03:35.799+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-2] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T15:03:36.287+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T15:03:36.287+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T15:03:36.783+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T15:03:36.784+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T15:03:36.835+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T15:03:36.879+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T15:03:36.888+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T15:05:06.988+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-6] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T15:05:06.988+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T15:05:06.993+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-5] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T15:05:06.993+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T15:05:06.996+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T15:05:06.996+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T15:05:07.005+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T15:05:07.012+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T15:05:07.018+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T15:05:07.019+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T15:05:07.031+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T16:20:02.684+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-10] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T16:20:02.684+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-9] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T16:20:02.749+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-9] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T16:20:02.749+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-10] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T16:20:03.071+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T16:20:03.071+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T16:20:03.214+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T16:20:03.216+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T16:20:03.239+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T16:20:03.250+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T16:20:03.257+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T16:20:03.358+05:30  WARN 17052 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m51s566ms582µs700ns).
+2025-11-18T16:43:20.484+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-4] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T16:43:20.488+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-3] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T16:43:20.500+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-4] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T16:43:20.504+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-3] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T16:43:20.519+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T16:43:20.520+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T16:43:20.545+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T16:43:20.560+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T16:43:20.566+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T16:43:20.572+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T16:43:20.575+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:08:51.237+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-7] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T17:08:51.237+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-8] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T17:08:51.241+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-7] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T17:08:51.241+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-8] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T17:08:51.245+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T17:08:51.246+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T17:08:51.280+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:08:51.291+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:08:51.293+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:08:51.304+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:08:51.304+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:09:11.748+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T17:09:11.748+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-2] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T17:09:11.755+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-2] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T17:09:11.755+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-1] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T17:09:11.761+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T17:09:11.761+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T17:09:11.787+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:09:11.791+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:09:11.820+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:09:11.820+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:09:11.841+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:09:12.137+05:30  WARN 17052 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m8s780ms808µs700ns).
+2025-11-18T17:26:37.162+05:30  WARN 17052 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s695ms417µs800ns).
+2025-11-18T17:44:37.856+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-6] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T17:44:37.856+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-5] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T17:44:37.929+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-5] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T17:44:37.929+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-6] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T17:44:38.220+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T17:44:38.220+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T17:44:38.449+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:44:38.449+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:44:38.480+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:44:38.492+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:44:38.500+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:44:56.232+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-8] c.n.v.controller.StudentController       : REST request to get all students
+2025-11-18T17:44:56.232+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-7] c.n.version1.controller.BatchController  : REST request to get all batches
+2025-11-18T17:44:56.240+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-7] c.nirmaan.version1.service.BatchService  : Fetching all batches
+2025-11-18T17:44:56.240+05:30  INFO 17052 --- [SAMS] [http-nio-8080-exec-8] c.n.version1.service.StudentService      : Fetching all students
+2025-11-18T17:44:56.243+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0
+2025-11-18T17:44:56.243+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        s1_0.sid,
+        s1_0.batch_id,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0
+2025-11-18T17:44:56.248+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:44:56.295+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:44:56.295+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:44:56.295+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.batch_id,
+        s1_0.sid,
+        s1_0.created_at,
+        s1_0.email,
+        s1_0.intime,
+        s1_0.outtime,
+        s1_0.phone,
+        s1_0.roll_number,
+        s1_0.sname,
+        s1_0.status,
+        s1_0.updated_at 
+    from
+        students s1_0 
+    where
+        s1_0.batch_id=?
+2025-11-18T17:44:56.314+05:30 DEBUG 17052 --- [SAMS] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        b1_0.batch_id,
+        b1_0.batch_code,
+        b1_0.batch_name,
+        b1_0.created_at,
+        b1_0.description,
+        b1_0.end_date,
+        b1_0.max_count,
+        b1_0.start_date,
+        b1_0.status,
+        b1_0.updated_at 
+    from
+        batches b1_0 
+    where
+        b1_0.batch_id=?
+2025-11-18T17:59:59.661+05:30  WARN 17052 --- [SAMS] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m51s974ms395µs200ns).
+2025-11-18T18:21:34.168+05:30  INFO 17052 --- [SAMS] [RMI TCP Connection(157)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-11-18T18:21:34.390+05:30  INFO 17052 --- [SAMS] [RMI TCP Connection(157)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-18T18:21:34.453+05:30  INFO 17052 --- [SAMS] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-18T18:21:34.515+05:30  INFO 17052 --- [SAMS] [RMI TCP Connection(157)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-18T18:21:34.664+05:30  INFO 17052 --- [SAMS] [RMI TCP Connection(157)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-18T18:21:34.672+05:30  INFO 17052 --- [SAMS] [RMI TCP Connection(157)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

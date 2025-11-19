@@ -33,6 +33,7 @@ public class StudentService {
 
     @Autowired
     private BatchService batchService;
+    
 
     /**
      * Create new student with optional batch assignment
