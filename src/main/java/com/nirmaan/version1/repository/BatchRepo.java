@@ -41,7 +41,11 @@ public interface BatchRepo extends JpaRepository<Batch, Integer> {
 	// Count batches by status
 	long countByStatus(BatchStatus status);
 
-	// Get batch with student count
+	// Get batch with student count - FIXED: More efficient query
 	@Query("SELECT b FROM Batch b LEFT JOIN FETCH b.students WHERE b.batchId = :batchId")
 	Optional<Batch> findByIdWithStudents(@Param("batchId") Integer batchId);
+
+	// NEW: Find all batches with students (prevents N+1)
+	@Query("SELECT DISTINCT b FROM Batch b LEFT JOIN FETCH b.students")
+	List<Batch> findAllWithStudents();
 }
